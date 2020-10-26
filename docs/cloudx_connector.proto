@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message PlatformRequest {
+   string clintId = 1;
+}
+
+message ComponentResponse {
+   string type = 1;
+   string id = 2;
+   string name = 3;
+}
+
+service CloudxConnector {
+    rpc ShowComponents(PlatformRequest) returns (stream ComponentResponse) {}
+}
